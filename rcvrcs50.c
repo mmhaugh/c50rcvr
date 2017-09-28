@@ -31,11 +31,10 @@ int main(int argc, char *argv[])
         fprintf(stderr, "Could not open %s.\n", argv[1]);
         return 2;
     }
+	
     // Variable to determine filenames
     int blockCount = 0, temp = 0, temporary = 0;
-
     FILE *img;
-
     // Runs until recursive function called enough times to reach EOF of infile
     do
     {
@@ -86,7 +85,7 @@ int main(int argc, char *argv[])
 // Recursively tests for jpeg identifying BYTEs and writes to jpeg if applicable
 int recursiveJpegWrite(FILE *inptr, FILE *img, int initializer)
 {
-    // Temp storage of infile BYTEs
+    // Temp storage of infile bytes
     BYTE buffer[512];
 
     // From infile reads size of memory block to buffer checking for EOF
@@ -136,7 +135,7 @@ int recursiveJpegWrite(FILE *inptr, FILE *img, int initializer)
                 break;
         }
     }
-    // Reached EOF and returns value to break main while loop
+    // Reached EOF and returns value to break while loop in main
     else;
         return 2;
 }
